@@ -1,8 +1,19 @@
 import fitz 
+import xlsxwriter
+
+from xlsxwriter.workbook import Workbook
 
 file = 'LCPv.001.pdf'
-
 pdf_file = fitz.open(file)
+
+workbook = Workbook('text_pdf.xlsx')
+worksheet = workbook.add_worksheet()
+
+worksheet.write(0, 0, 'SinoNom Char')
+worksheet.write(0, 1, 'Chữ Quốc Ngữ')
+
+row, col = (1, 0)
+# res = []
 
 for page_index in range(len(pdf_file)):
     
@@ -15,23 +26,23 @@ for page_index in range(len(pdf_file)):
         base_image = pdf_file.extract_image(xref)
 
         ext = base_image['ext']
-        with open(f'LCPv.001.{ext}', 'wb') as F:
+        with open(f'LCPv.001.{page_index + 1}.{ext}', 'wb') as F:
             F.write(base_image['image'])
     
     else:
-
-        print(f'page of {page_index}')
+        
         page_text = page.get_text() + chr(12)
-        print(page_text)
-
         dictionary_elements = page.get_text('dict')
-
-        print(dictionary_elements)
         
         for block in dictionary_elements['blocks']:
             line_text = ''
             for line in block['lines']:
                 for span in line['spans']:
-                    line_text += ' ' + span['text']
-            print('\t' + line_text)
-        break
+                    worksheet.write(row, col, span['text'])
+                    # res.append([span['text'], (row, col)])
+                    col += 1
+                    col %= 2
+            if (col == 0): row += 1
+    
+workbook.close()
+
