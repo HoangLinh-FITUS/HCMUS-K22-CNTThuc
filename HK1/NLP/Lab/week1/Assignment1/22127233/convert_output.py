@@ -155,8 +155,9 @@ def cmp_word(word_HN, word_QN):
     if word_HN in S2: return 1 # color default
     
     l = len(set(S1) & set(S2))
-    if l == 1: return 1 # color default 
-    if l > 1: return 2 # color blue 
+    # if l == 1: return 1 # color default 
+    # if l > 1: return 2 # color blue 
+    if l != 0: return 2
     
     return 0 # color red
 
