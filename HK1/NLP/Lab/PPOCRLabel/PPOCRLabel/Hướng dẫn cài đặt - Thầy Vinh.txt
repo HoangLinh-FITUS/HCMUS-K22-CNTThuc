@@ -1,0 +1,37 @@
+Hướng dẫn cài bằng conda:
+1. Cài đặt environment
+> conda create --name myenv python=3.12.5
+2. Cập nhật pip
+> pip install --upgrade pip
+3. Cài đặt paddlepaddle
+> python -m pip install paddlepaddle
+4. Cài đặt PPOCRLabel
+> pip install PPOCRLabel
+5. Chuyển đường dẫn tới thư mục PPOCRLabel (thư mục giải nén ban đầu, các bạn tự điều chỉnh đường dẫn cho đúng với máy của mình)
+> cd PPOCRLabel
+6. Khởi động chương trình lần đầu
+> python PPOCRLabel.py --lang ch
+7. Tắt chương trình. Kiểm tra đường dẫn của thư mục ".paddleocr" khi chạy lệnh trên để copy các model sau:
+	- Copy các file trong "model/det" vào thư mục ".paddleocr/whl/det/ch/..." trong máy (lưu ý ... là vì còn 1 thư mục con tên ngẫu nhiên nữa, chép vào bên trong thư mục đó luôn)
+	- Copy các file trong "model/rec" vào thư mục ".paddleocr/whl/rec/ch/..." trong máy (lưu ý ... là vì còn 1 thư mục con tên ngẫu nhiên nữa, chép vào bên trong thư mục đó luôn)
+8. Khởi động chương trình với model mới
+> python PPOCRLabel.py --lang ch
+
+
+
+Hướng dẫn cài bằng python:
+1. Cập nhật pip
+> pip install --upgrade pip
+3. Cài đặt paddlepaddle
+> python -m pip install paddlepaddle
+4. Cài đặt PPOCRLabel
+> pip install PPOCRLabel
+5. Chuyển đường dẫn tới thư mục PPOCRLabel (thư mục giải nén ban đầu, các bạn tự điều chỉnh đường dẫn cho đúng với máy của mình)
+> cd PPOCRLabel
+6. Khởi động chương trình lần đầu
+> python PPOCRLabel.py --lang ch
+7. Tắt chương trình. Kiểm tra đường dẫn của thư mục ".paddleocr" khi chạy lệnh trên để copy các model sau:
+	- Copy các file trong "model/det" vào thư mục ".paddleocr/whl/det/ch/..." trong máy (lưu ý ... là vì còn 1 thư mục con tên ngẫu nhiên nữa, chép vào bên trong thư mục đó luôn)
+	- Copy các file trong "model/rec" vào thư mục ".paddleocr/whl/rec/ch/..." trong máy (lưu ý ... là vì còn 1 thư mục con tên ngẫu nhiên nữa, chép vào bên trong thư mục đó luôn)
+8. Khởi động chương trình với model mới
+> python PPOCRLabel.py --lang ch
