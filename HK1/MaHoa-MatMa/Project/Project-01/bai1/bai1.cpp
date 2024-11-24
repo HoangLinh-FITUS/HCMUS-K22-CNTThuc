@@ -1,7 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <complex>
-//#include "bai1.h"
 
 using namespace std;
 namespace calculator {
@@ -500,29 +498,11 @@ bool miller_rabin(const BigHex& n) {
     return true;
 }
 
-
 int main(int argc, char* argv[]) {
 	ios::sync_with_stdio(false); cin.tie(0);
-  
-    /*long long a = 0x12;
-    long long b = 0x12;
-    cout << BigHex(a) * BigHex(b) << '\n';
-    cout << hex << a * b;*/
-    //string a, b, m;
-    //long long d = 1;
-    //cin >> a >> b >> m >> d;
-
-    //cout << BigHex(a) + BigHex(b) << '\n';
-
-    //if (BigHex(a) < BigHex(b)) cout << "-1\n";
-    //else cout << BigHex(a) - BigHex(b) << '\n';
-    //
-    //cout << BigHex(a) * BigHex(b) << '\n';
-    //cout << BigHex(a) % BigHex(b) << '\n';
-    //cout << BigHex(a) / d << '\n';
-    ////cout << power(a, b, m) << '\n';
-    //cout << MONTGOMERY::powerMod(a, b, m) << '\n';
-    string m = "37";cin >> m;
+ 
+    string m;
+    cin >> m;
     cout << miller_rabin(m) << '\n';
 
 	return 0;
