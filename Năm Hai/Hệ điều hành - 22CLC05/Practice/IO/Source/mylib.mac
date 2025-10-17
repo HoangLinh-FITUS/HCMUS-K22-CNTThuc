@@ -1,0 +1,122 @@
+;----------------------------------------------------------------------------
+;                 Thu vien cac Macro trong Assembler
+;----------------------------------------------------------------------------
+;   Cac macro trong thu vien :
+; 1>@Close       ;Dong 1 tap tin co the file da biet
+;Cu phap : @Close The_File; Neu khong tham so thi se lay the_file trong BX
+;
+; 2>@D_Char      ;In 1 ky tu ra man hinh
+;Cu phap : @D_char '*' hoac AL ; Neu khong tham so thi in noi dung DL
+;
+; 3>@D_Read      ;Doc 1 tap tin voi the file da biet vao vung dem
+;Cu phap : @D_Read The_File,Vung_dem
+;
+; 4>@D_Write     ;Ghi len 1 tap tin (co the file da biet) tu 1 vung dem
+;Cu phap : @D_Write The_file,Vung_dem
+;
+; 5>@Make_Buff   ;Tao 1 vung dem nhap tu ban phim voi chieu dai da xac dinh
+;Cu phap : @Make_Buff Ten_Vdem,ChDai_VDem
+;
+; 6>@Open        ;Mo 1 tap tin tren dia de doc /ghi
+;Cu phap : @Open Ten_File ;Co the la 1 thanh ghi tro den dau ten
+;
+; 7>@Read_buff   ;Doc vung dem ban phim co dia chi DS:dia chi
+;Cu phap : @read_buff <offset DiaChi>
+;
+; 8>@UpCase      ;Doi ky tu trong thanh ghi AL thanh chu in
+;Cu phap : @UpCase
+;
+; 9>@Write       ;In 1 chuoi ky tu ra man hinh
+;Cu phap : @Write 'Hello' hoac @Write <CR,LF,'Hello'>
+;
+; 10>@write_r    ;In xau (ket thuc bang '$') o 1 dia chi nao do ra man hinh
+;Cu phap : @Write_r <offset TB>
+  blank equ 32
+  cr    equ 13
+  lf    equ 10
+  If1
+@Close Macro  Handle?
+    Ifnb <Handle?>
+      mov bx,handle?
+    endif
+    mov ah,3Eh
+    int 21h
+ EndM
+@D_Read Macro Handle?,File_buffer?
+    push dx
+    mov dx,file_buffer?
+    ifnb <handle?>
+      mov bx,handle?
+    endif
+    mov ah,3Fh
+    int 21h
+    pop dx
+ EndM
+@D_Write Macro Handle?,Pointer?
+    push dx
+    mov dx,pointer?
+    ifnb <handle?>
+      mov bx,handle?
+    endif
+    mov ah,40h
+    int 21h
+    pop dx
+ Endm
+@Read_buff Macro Location?
+    push dx
+    mov dx,location?
+    mov ah,0ah
+    int 221h
+    pop dx
+ EndM
+@Make_Buff Macro Name?,Len?
+  Name? db Len?
+        db ?
+        db len?DUP(?)
+        db cr
+ EndM
+@Open Macro Offset_Asciiz?,Where?
+    push dx
+    mov dx,offset_asciiz?
+    mov al,2
+    mov ah,3Dh
+    int 21h
+    mov bx,ax
+    pop dx
+    ifnb  <where?>
+      jc  where?
+    endif
+ Endm
+@Write Macro Text?
+ Local Around,Message
+    push ax
+    push dx
+    mov ah,9
+    mov dx,offset Message
+    int 21h
+    pop dx
+    pop ax
+    jmp short Around
+ Message DB Text?,'$'
+ Around :
+    EndM
+@Write_r Macro Address?
+    push dx
+    mov dx,Address?
+    mov ah,9
+    int 21h
+    pop dx
+ EndM
+ENDIF
+
+
+
+
+
+
+
+
+
+
+
+
