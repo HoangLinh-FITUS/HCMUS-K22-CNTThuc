@@ -1,0 +1,53 @@
+DATASET:
+  BATCH_SIZE: 32
+  WORKERS: 0
+  VOCAB:
+    TOKENIZER: null
+    MIN_FREQ: 1
+    WORD_EMBEDDING: null
+    WORD_EMBEDDING_CACHE: null
+    BOS_TOKEN: <bos>
+    EOS_TOKEN: <eos>
+    PAD_TOKEN: <pad>
+    UNK_TOKEN: <unk>
+    USE_MAPPING: False
+    DF_PATH:
+      TRAIN: vivqa-dataset/train.csv
+      TEST: vivqa-dataset/test.csv
+  DF_PATH:
+    TRAIN: vivqa-dataset/train.csv
+    TEST: vivqa-dataset/test.csv
+  FEATURE_PATH:
+    FEATURES: null
+    SCENE_TEXT: null
+    IMAGE: vivqa-dataset/images
+
+TRAINING:
+  CHECKPOINT_PATH: ViVQA-Models
+  LEARNING_RATE: 1.0e-5
+  RL_LEARNING_RATE: 0.000005
+  WARMUP: 1000
+  SCORE: em
+  TRAINING_BEAM_SIZE: 5
+  EVALUATING_BEAM_SIZE: 3
+  PATIENCE: 5
+
+MODEL:
+  NAME: vit_phobert_classification
+  DEVICE: cuda
+  VISION_EMBEDDING:
+    ARCHITECTURE: ViTEmbedding
+    PRETRAINED_NAME: google/vit-base-patch16-224-in21k
+    DEVICE: cuda
+    D_PRETRAINED_FEATURE: 768
+    D_MODEL: 512
+    DROPOUT: .1
+  TEXT_EMBEDDING:
+    ARCHITECTURE: RobertaEmbedding
+    PRETRAINED_NAME: vinai/phobert-base
+    DEVICE: cuda
+    D_PRETRAINED_FEATURE: 768
+    D_MODEL: 512
+    DROPOUT: .1
+  D_MODEL: 512
+  DROPOUT: .1

@@ -1,0 +1,8 @@
+Chào các bạn,
+
+Dưới đây là các bài lab tham khảo về bảo mật mạng, bao gồm các kỹ thuật như packet sniffing, packet spoofing, và nhiều kỹ thuật khác: SEED Security Labs - Networking.
+https://seedsecuritylabs.org/Labs_20.04/Networking/
+
+Mình cũng đã tổng hợp lại lời giải cho các bài lab này tại đây: Lời giải SEED Labs. https://github.com/phanquocky/seedlab
+
+Hy vọng các bạn sẽ thấy hữu ích!

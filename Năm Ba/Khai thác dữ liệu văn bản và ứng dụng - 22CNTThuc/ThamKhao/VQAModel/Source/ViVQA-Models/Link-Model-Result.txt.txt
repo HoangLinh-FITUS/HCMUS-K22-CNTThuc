@@ -1,0 +1,2 @@
+Link lưu trữ config model, model file save, train log, kết quả dự đoán:
+https://drive.google.com/drive/folders/1i8qH25fRD3r5Uoarop9kWrtYLBpOiCth?usp=drive_link

@@ -1,0 +1,42 @@
+﻿USE master;
+GO
+
+CREATE MASTER KEY ENCRYPTION BY PASSWORD= 'bmcsdl'
+GO
+
+CREATE CERTIFICATE MyCert
+WITH SUBJECT = 'My Cert';
+GO
+
+USE QLBongDa;
+GO
+
+CREATE DATABASE ENCRYPTION KEY
+WITH ALGORITHM = AES_256
+ENCRYPTION BY SERVER CERTIFICATE MyCert;
+GO
+
+ALTER DATABASE QLBongDa
+SET ENCRYPTION ON;
+GO
+
+USE master;
+GO 
+
+
+BACKUP CERTIFICATE MyCert TO 
+	FILE = 'D:\certificate.cer'  
+WITH PRIVATE KEY ( 
+	FILE = 'D:\certificate.pvk' ,   
+    ENCRYPTION BY PASSWORD = 'bmcsdl'
+);  
+GO  
+
+-- Tạo Chứng Chỉ từ .cer và .pvk
+CREATE CERTIFICATE MyCert 
+FROM 
+	FILE = 'D:\certificate.cer'
+WITH PRIVATE KEY (
+	FILE = 'D:\certificate.pvk',
+	DECRYPTION BY PASSWORD = 'bmcsdl'
+)

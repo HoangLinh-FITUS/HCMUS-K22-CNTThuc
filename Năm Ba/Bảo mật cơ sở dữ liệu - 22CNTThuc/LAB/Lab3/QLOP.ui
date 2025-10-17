@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1219</width>
+    <height>871</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>1191</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>36</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Quản Lý Lớp Học</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>210</y>
+      <width>361</width>
+      <height>561</height>
+     </rect>
+    </property>
+    <row>
+     <property name="text">
+      <string>New Row</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>New Row</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>New Row</string>
+     </property>
+    </row>
+    <column>
+     <property name="text">
+      <string>MALOP</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>TENLOP</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>MANV</string>
+     </property>
+    </column>
+    <item row="0" column="0">
+     <property name="text">
+      <string>22CLC05</string>
+     </property>
+    </item>
+    <item row="0" column="1">
+     <property name="text">
+      <string>Lớp 05</string>
+     </property>
+    </item>
+    <item row="0" column="2">
+     <property name="text">
+      <string>NV1</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QTableWidget" name="tableWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>435</x>
+      <y>211</y>
+      <width>771</width>
+      <height>561</height>
+     </rect>
+    </property>
+    <row>
+     <property name="text">
+      <string>New Row</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>New Row</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>New Row</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>New Row</string>
+     </property>
+    </row>
+    <column>
+     <property name="text">
+      <string>MASV</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>HOTEN</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>NGAYSINH</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>DIACHI</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>MALOP</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>TENDN</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>MATKHAU</string>
+     </property>
+    </column>
+    <item row="0" column="0">
+     <property name="text">
+      <string>12345</string>
+     </property>
+    </item>
+    <item row="0" column="1">
+     <property name="text">
+      <string>Nguyễn Văn A</string>
+     </property>
+    </item>
+    <item row="0" column="2">
+     <property name="text">
+      <string>01/01/2025</string>
+     </property>
+    </item>
+    <item row="0" column="3">
+     <property name="text">
+      <string>HCM</string>
+     </property>
+    </item>
+    <item row="0" column="4">
+     <property name="text">
+      <string>22CLC05</string>
+     </property>
+    </item>
+    <item row="0" column="5">
+     <property name="text">
+      <string>KHTN</string>
+     </property>
+    </item>
+    <item row="0" column="6">
+     <property name="text">
+      <string>123</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>180</y>
+      <width>231</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Trebuchet MS</family>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <item>
+     <property name="text">
+      <string>Lớp Quản Lý</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Tất Cả</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>180</y>
+      <width>111</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Nhập Điểm</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1219</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuT_i_Kho_n">
+    <property name="title">
+     <string>Home</string>
+    </property>
+    <widget class="QMenu" name="menuTai_Khoan">
+     <property name="title">
+      <string>Tai Khoan</string>
+     </property>
+     <addaction name="separator"/>
+    </widget>
+    <addaction name="menuTai_Khoan"/>
+    <addaction name="actionQuan_Ly_Lop_Hoc"/>
+   </widget>
+   <addaction name="menuT_i_Kho_n"/>
+  </widget>
+  <action name="actionHome">
+   <property name="text">
+    <string>Home</string>
+   </property>
+  </action>
+  <action name="actionThongo_Tin">
+   <property name="text">
+    <string/>
+   </property>
+  </action>
+  <action name="actionHome_2">
+   <property name="text">
+    <string>Home</string>
+   </property>
+  </action>
+  <action name="actionQuan_Ly_Lop_Hoc">
+   <property name="text">
+    <string>Quan Ly Lop Hoc</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
