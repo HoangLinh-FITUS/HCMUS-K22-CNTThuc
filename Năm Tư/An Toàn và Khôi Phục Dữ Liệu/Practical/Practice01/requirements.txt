@@ -1,0 +1,24 @@
+Requirements:
+
+A 200MB disk image that has been completely erased (files have been deleted) is provided in the link below. Use at least 2 data recovery tools to recover all files in the disk.
+
+- At least 2 tools are needed to compare the effectiveness of the tools and the ease of use.
+
+- Indicate the path of the files in the input disk.
+
+Guidance for using .VHD file:
+
+- Use windows search with the phrase "Attach a virtual disk". Then, click on the first result or something like that.
+
+- Click button Attach VHD, and browse to .vhd file. Then click "Attach"
+
+- There will be a new volume on your PC. You will target to this volume for recovering data.
+
+Submission:
+
+- Submit a report presenting the above ideas
+
+- File name: <Student ID>_P1.docx/.pdf
+
+Image disk file: https://drive.google.com/file/d/1Ap02NaGGijxdyitPepBlxGIWIVVqnttN/view?usp=drive_link
+

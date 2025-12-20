@@ -1,0 +1,12 @@
+command line:
+
+>copype amd64 C:\WinPE_x64
+
+>Dism /Mount-Image /ImageFile:"C:\WinPE_x64\media\sources\boot.wim" /index:1 /MountDir:"C:\WinPE_x64\mount"
+# sao chep ung dung vao trong folder /mount  
+
+>Dism /Commit-Image /MountDir:"C:\WinPE_x64\mount"
+
+>makewinpemedia /iso c:\winpe_x64 c:\winpe_x64\winpe_x64.iso
+
+https://drive.google.com/file/d/1MvvexB9O0D0704ivYn_k8ts5NsKEMD4j/view?usp=sharing

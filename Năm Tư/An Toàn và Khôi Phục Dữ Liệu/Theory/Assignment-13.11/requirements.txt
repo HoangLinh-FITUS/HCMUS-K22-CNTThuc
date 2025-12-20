@@ -1,0 +1,13 @@
+Requirements:
+
+A 50MB disk image is provided.
+
+Let use a hexadecimal reader tool (such as Winhex) to list out the directory tree of that disk.
+
+Submission:
+
+- File name: <Student ID>_Exercise1113.docx/.pdf
+
+
+
+https://drive.google.com/file/d/1ME572Y0pIR8qW4A6d35Lmqy4EVCxysrC/view

@@ -1,0 +1,28 @@
+In some case, you cannot boot into your Windows on your PC/Laptop. Some data was stored at C drive, if Windows is re-installed, all that data will be lost. Or you want to restrict access permission in some internal disks.
+
+Recovery bootable USB flash drive is one of the ways that you can use to copy data from your PC/Laptop to other storage devices.
+
+- In your recovery USB flash drive/disc, there is at least one data recovery tool
+
+Hint(s)
+
+You can use WinPE for creating a recovery bootable USB flash drive/disc
+
+Submission:
+
+1. If you have an available USB flash drive, it is better to create the recovery bootable USB flash drive on it, and give it to the teacher. It will be return to you in two weeks after the result is evaluated.
+
+Otherwise, you can create an ISO file (or something like that), store it on your cloud, and write the access URL on your report.
+
+2. Report document
+
+- Describe briefly what is in your flash drive/disc/ISO file
+
+- Guide the user how to use your flash drive/disc/ISO file as a recovery tool (means the data recovery can be run)
+
+If your output is a bootable flash drive or disc, it is a simple sentence. How to change the boot priority is the user's duty
+If your output is an ISO file, let guide the user how to deploy it on a USB flash drive or disc
+- Capture the UI of the data recovery tool which is open in the recovery environment (for example, WinPE is running, then the recovery tool is open)
+
+- Provide an URL to your ISO file (if any)
+

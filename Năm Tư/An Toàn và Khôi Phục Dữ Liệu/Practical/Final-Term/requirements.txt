@@ -1,0 +1,29 @@
+Requirements: 
+
+(1) Investigate the structure of PDF files and the steganography technique used to hide data within PDF file.
+
+- Utilize redundant or low-value content within the PDF file structure to minimize the increase in the PDF file size after data concealment.
+
+- Allow the concealment of multiple files within a single PDF file.
+
+- Allow the deletion of the concealed files
+
+- Allow the export extraction of the concealed files
+
+(2) GUI application is evaluated higher than command line app.
+
+(3) The report has to 
+
+ - clearly state which parts refer to/utilize open-source codes, and include the path/link to the source codes used in the project.
+
+ - describe where data is added into PDF file, how it impacts to the original file
+
+ - describe functions in your source codes, what they are for
+
+Submission:
+
+- Includes Source Codes, and Report folders
+
+- Compress and name file: <Student ID>_FinalProj.zip/rar/7z
+
+Video demo: https://drive.google.com/file/d/1vcZOQmcE3vdLSWWKXcqCnO8ovK4NfiEe/view
