@@ -1,0 +1,36 @@
+# 2. Background and related 
+- kiến trúc nerual netword đã chiếm ưu thế trong task of document classification 
+- Bert tốt những nó có số lượng tham số rất lớn, yêu cầu mức tính toán đáng kể 
+- Knowledge distillation - KD (chắt lọc tri thức)
+	+ một kĩ thuật nén hiệu quả 
+	+ **chắt lọc** thông đã học được từ model lớn (the teacher) sang model nhỏ hơn (the student)
+	+ sử dụng xác suất phân lớp bởi pre-trained teacher (nhãn mềm - soft targets) để train cho model student trên tập dữ liệu tranfer 
+
+# 3. our approach 
+- để điều chỉnh $bert_base$ và $bert_large$ cho document classification 
+- thêm một tầng fully-connected lên trạng thái ẩn cuối cùng tương ứng với token đầu vào [CLS] (classification token).
+- trong quá trình fine-tuning, đã tối ưu toán bộ model từ đầu đến cuối 
+	+ với bộ tham số softmax classifier bổ sung $W \in R^{K \times H}$
+		+ H là kích thước của vector trạng thái ẩn 
+		+ K là số lượng nhãn (classes)
+	+ tối thiểu hàm mất mát cross-entropy cho bài toán single-label và hàm mất mát binay cross-entropy cho bài toán multi-label 
+- tiếp theo, KD từ fine-tuned $bert_large$ thành $LSTM_reg$ nhỏ hơn nhiều
+- thực hiện quá trình (Knowledge Distillation – KD) bằng cách 
+	+ sử dụng các mẫu huấn luyện (training examples)
+	+ kèm theo một vài phép tăng cường dữ liệu nhỏ (minor augmentations)
+	+ để tạo thành transfer set.
+
+- kết hợp hai objectives củ classification cho mỗi trong mẫu trong tập chuyển giao (transfer set):
+	+ $\mathcal(L)_{classification}$ sử dụng target labels để tối ưu hàm mất mát cross-entropy và binary cross-entropy tiêu chuẩn 
+		+ tùy thuộc vào tập dữ liệu multi-label hoặc single-label 
+	+ $\mathcal(L)_{distill}$ sử dụng soft tartgets để tối ưu hóa độ chênh lệch Kullback–Leibler (KL) 
+		+ ký hiệu: KL(p||q)
+			+ p và q là xác suất phân lớp được sinh ra bởi student model và teacher model 
+
+hàm mục tiêu: 
+$$
+\mathcal(L) = \mathcal(L)_{classication} + \lamda . \mathcal(L)_{distill}
+$$
+trong đó $\lamda \in \mathbb{R}$ là hệ số trọng số dùng để cân bằng mức độ đóng góp của hai hàm mất mát vào mục tiêu huấn luyện tổng thể.
+			
+	
